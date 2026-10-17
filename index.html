@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#05070f">
+  <title>متحف فيزياء 2</title>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script type="importmap">
+    { "imports": {
+        "three": "./vendor/three/three.module.js",
+        "three/addons/": "./vendor/three/addons/",
+        "katex": "./vendor/katex/katex.mjs"
+    } }
+  </script>
+</head>
+<body>
+  <!-- شاشة التحميل -->
+  <div id="loader" class="loader">
+    <div class="loader-orbit"><span></span></div>
+    <p>جارٍ تحميل المتحف…</p>
+  </div>
+
+  <!-- الخط الزمني الكوني -->
+  <section id="timeline" class="view" aria-label="الخط الزمني للمنهج">
+    <canvas id="cosmos"></canvas>
+    <header class="tl-head">
+      <div class="brand">
+        <span class="brand-mark">✦</span>
+        <div>
+          <h1>متحف فيزياء 2</h1>
+          <p>نظام المسارات · ستة فصول · ثلاثة عشر درساً</p>
+        </div>
+      </div>
+      <nav id="filters" class="filters" aria-label="الفلترة حسب الفصل والدرس">
+        <div class="chip-row" id="chapterChips"></div>
+        <div class="chip-row lessons" id="lessonChips"></div>
+      </nav>
+    </header>
+    <div class="zoom-ctrl">
+      <button id="zoomIn" aria-label="تقريب">+</button>
+      <button id="zoomOut" aria-label="تبعيد">−</button>
+      <button id="zoomHome" aria-label="العودة للمنظر الكامل">⌂</button>
+    </div>
+    <p class="tl-hint" id="tlHint">اسحب للتنقل · مرّر أو اقرص للتقريب · اضغط على كوكب لرؤية دروسه</p>
+  </section>
+
+  <!-- بطاقة الدرس -->
+  <div id="cardLayer" class="card-layer" hidden></div>
+
+  <!-- غرفة المحاكاة -->
+  <section id="room" class="view room" hidden></section>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
